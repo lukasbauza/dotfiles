@@ -6,9 +6,16 @@ return {
         "tex",
         "plaintex",
         "norg",
+        "org",
     },
     config = function()
         require("autolist").setup()
+
+        vim.api.nvim_create_autocmd("BufWritePre", {
+          callback = function()
+            vim.cmd("AutolistRecalculate")
+          end,
+        })
 
         vim.keymap.set("i", "<tab>", "<cmd>AutolistTab<cr>")
         vim.keymap.set("i", "<s-tab>", "<cmd>AutolistShiftTab<cr>")
@@ -17,7 +24,6 @@ return {
         vim.keymap.set("n", "o", "o<cmd>AutolistNewBullet<cr>")
         vim.keymap.set("n", "O", "O<cmd>AutolistNewBulletBefore<cr>")
         vim.keymap.set("n", "<CR>", "<cmd>AutolistToggleCheckbox<cr><CR>")
-        vim.keymap.set("n", "<C-r>", "<cmd>AutolistRecalculate<cr>")
 
         -- cycle list types with dot-repeat
         vim.keymap.set("n", "<leader>cn", require("autolist").cycle_next_dr, { expr = true })
