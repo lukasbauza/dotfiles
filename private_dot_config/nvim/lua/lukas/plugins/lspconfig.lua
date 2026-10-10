@@ -8,19 +8,6 @@ return {
     "ibhagwan/fzf-lua",
 	},
 	config = function()
-    vim.lsp.config("markdown_oxide", {
-      cmd = { "markdown-oxide" },
-      filetypes = { "markdown" },
-      root_markers = { ".git", ".obsidian", ".moxide.toml" },
-      capabilities = {
-        workspace = {
-          didChangeWatchedFiles = {
-            dynamicRegistration = true,
-          }
-        }
-      }
-    })
-
     vim.lsp.config("nushell", {
       cmd = { "nu", "--lsp" },
       filetypes = { "nu" },
@@ -48,7 +35,6 @@ return {
       "nushell",
       "rust_analyzer",
       "tsserver",
-      "markdown_oxide",
     })
 
     vim.api.nvim_create_autocmd("InsertEnter", {
