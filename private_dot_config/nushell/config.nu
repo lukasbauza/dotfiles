@@ -31,3 +31,5 @@ let nix_bin = $"($env.HOME)/.nix-profile/bin"
 if ($nix_bin | path exists) {
   $env.PATH = ($env.PATH | prepend $nix_bin)
 }
+
+$env.PATH = ($env.PATH | prepend ($env.HOME | path join ".local" "bin"))
