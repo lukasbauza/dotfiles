@@ -1,10 +1,9 @@
 return {
-  {
-    "oonamo/ef-themes.nvim",
-    priority = 1000, -- Loads this before other plugins.
-    config = function(_, opts)
-      require("ef-themes")
-      vim.cmd("colorscheme ef-dark")
-    end,
-  }
+  "bluz71/vim-moonfly-colors",
+  name = "moonfly",
+  lazy = false,
+  priority = 1000,
+  config = function()
+    vim.cmd.colorscheme("moonfly")
+  end,
 }
