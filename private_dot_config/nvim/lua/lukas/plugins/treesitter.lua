@@ -7,12 +7,14 @@ return {
       "javascript",
       "kotlin",
       "lua",
+      "markdown",
       "python",
       "query",
       "rust",
       "typescript",
       "vim",
       "vimdoc",
+      "yaml"
     })
   end,
 }
