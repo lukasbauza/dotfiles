@@ -26,6 +26,7 @@ if (which zoxide | is-not-empty) {
 
 $env.config.buffer_editor = "nvim"
 $env.config.show_banner = false
+$env.EDITOR = "nvim"
 
 let nix_bin = $"($env.HOME)/.nix-profile/bin"
 if ($nix_bin | path exists) {
