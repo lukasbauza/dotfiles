@@ -34,4 +34,11 @@ if ($nix_bin | path exists) {
 }
 
 $env.PATH = ($env.PATH | prepend ($env.HOME | path join ".local" "bin"))
-source "~/.cargo/env.nu"
+
+const cargo_env = if ( $"($nu.home-dir)/.cargo/env.nu" | path exists ) {
+  $"($nu.home-dir)/.cargo/env.nu"
+} else {
+  null
+}
+
+source $cargo_env
