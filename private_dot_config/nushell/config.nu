@@ -34,4 +34,5 @@ if ($nix_bin | path exists) {
 }
 
 $env.PATH = ($env.PATH | prepend ($env.HOME | path join ".local" "bin"))
-source "~/.cargo/env.nu"
+
+$env.PATH = ($env.PATH | prepend ($env.HOME | path join ".cargo" "env.nu"))
