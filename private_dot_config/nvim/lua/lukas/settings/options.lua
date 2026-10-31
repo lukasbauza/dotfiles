@@ -12,6 +12,7 @@ vim.opt.wrap = true
 
 vim.opt.undofile = true
 vim.opt.clipboard = "unnamedplus"
+vim.g.clipboard = "osc52"
 
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
