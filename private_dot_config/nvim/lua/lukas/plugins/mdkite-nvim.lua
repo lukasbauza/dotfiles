@@ -13,5 +13,22 @@ return {
       default_theme = "dark",      -- "dark" or "light"; initial preview theme
       debounce_ms = 300,
     })
+
+    vim.keymap.set("n", "<leader>mp", "<cmd>MdKite toggle<cr>", {
+      desc = "Markdown: Toggle preview",
+    })
+
+    vim.keymap.set("n", "<leader>ms", "<cmd>MdKite start<cr>", {
+      desc = "Markdown: Start preview",
+    })
+
+    vim.keymap.set("n", "<leader>mx", "<cmd>MdKite stop<cr>", {
+      desc = "Markdown: Stop preview",
+    })
+
+    vim.keymap.set("n", "<leader>mr", "<cmd>MdKite refresh<cr>", {
+      desc = "Markdown: Refresh preview",
+    })
+
   end,
 }
