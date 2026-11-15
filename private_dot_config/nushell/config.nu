@@ -40,3 +40,6 @@ const cargo_env = if ( $"($nu.home-dir)/.cargo/env.nu" | path exists ) {
 }
 
 source $cargo_env
+
+$env.JAVA_HOME = "/usr/lib/openjdk-25/"
+$env.PATH = ($env.PATH | prepend $"($env.JAVA_HOME)/bin")
